@@ -29,6 +29,18 @@
       ],
       "@libs/drizzle-library/*": [
         "libs/drizzle-library/src/*"
+      ],
+      "libs/common-library": [
+        "libs/common-library/src"
+      ],
+      "libs/common-library/*": [
+        "libs/common-library/src/*"
+      ],
+      "libs/config-library": [
+        "libs/config-library/src"
+      ],
+      "libs/config-library/*": [
+        "libs/config-library/src/*"
       ]
     }
   }

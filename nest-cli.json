@@ -37,6 +37,24 @@
         "tsConfigPath": "apps/cli/tsconfig.app.json"
       }
     },
+    "common-library": {
+      "type": "library",
+      "root": "libs/common-library",
+      "entryFile": "index",
+      "sourceRoot": "libs/common-library/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/common-library/tsconfig.lib.json"
+      }
+    },
+    "config-library": {
+      "type": "library",
+      "root": "libs/config-library",
+      "entryFile": "index",
+      "sourceRoot": "libs/config-library/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/config-library/tsconfig.lib.json"
+      }
+    },
     "drizzle-library": {
       "type": "library",
       "root": "libs/drizzle-library",
