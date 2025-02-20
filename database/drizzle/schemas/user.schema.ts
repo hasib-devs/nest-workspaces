@@ -14,12 +14,17 @@ export const usersTable = pgTable(
   {
     id: serial('id').primaryKey(),
     name: varchar('name', { length: 255 }).notNull(),
-    email: text('email').unique().notNull(),
-    password: text('password').notNull(),
-    roles: varchar('roles', { length: 255 }).notNull().default('user'),
+    email: varchar('email', { length: 255 }),
+    mobile: varchar('mobile', { length: 20 }),
+    authType: varchar('auth_type', { length: 20 }).notNull().default('local'),
+    password: text('password'),
+    role: varchar('role', { length: 50 }).notNull().default('user'),
     ...timestamps,
   },
-  (table) => [uniqueIndex('email_idx').on(table.email)],
+  (table) => [
+    uniqueIndex('email_idx').on(table.email),
+    uniqueIndex('name_idx').on(table.name),
+  ],
 );
 
 export type User = InferSelectModel<typeof usersTable>;

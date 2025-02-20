@@ -5,8 +5,15 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1740079473068,
+      "when": 1740082392714,
       "tag": "0000_create_users_table",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1740082430488,
+      "tag": "0001_create_posts_table",
       "breakpoints": true
     }
   ]
