@@ -18,7 +18,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./apps/api/test/jest-e2e.json",
-    "drizzle": "npx drizzle-kit --config=libs/database/src/drizzle/drizzle.config.ts",
+    "drizzle": "npx drizzle-kit --config=libs/database-library/src/drizzle/drizzle.config.ts",
     "drizzle:generate": "npm run drizzle generate",
     "drizzle:migrate": "npm run drizzle migrate",
     "drizzle:check": "npm run drizzle check",
@@ -93,7 +93,7 @@
       "^@libs/auth-library(|/.*)$": "<rootDir>/libs/auth-library/src/$1",
       "^libs/common-library(|/.*)$": "<rootDir>/libs/common-library/src/$1",
       "^libs/config-library(|/.*)$": "<rootDir>/libs/config-library/src/$1",
-      "^libs/database(|/.*)$": "<rootDir>/libs/database/src/$1"
+      "^libs/database-library(|/.*)$": "<rootDir>/libs/database-library/src/$1"
     }
   }
 }

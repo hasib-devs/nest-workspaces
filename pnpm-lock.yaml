@@ -2105,7 +2105,7 @@ packages:
       '@neondatabase/serverless': '>=0.10.0'
       '@op-engineering/op-sqlite': '>=2'
       '@opentelemetry/api': ^1.4.1
-      '@planetscale/database': '>=1'
+      '@planetscale/database-library': '>=1'
       '@prisma/client': '*'
       '@tidbcloud/serverless': '*'
       '@types/better-sqlite3': '*'
@@ -2141,7 +2141,7 @@ packages:
         optional: true
       '@opentelemetry/api':
         optional: true
-      '@planetscale/database':
+      '@planetscale/database-library':
         optional: true
       '@prisma/client':
         optional: true

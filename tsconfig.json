@@ -36,11 +36,11 @@
       "@libs/config-library/*": [
         "libs/config-library/src/*"
       ],
-      "@libs/database": [
-        "libs/database/src"
+      "@libs/database-library": [
+        "libs/database-library/src"
       ],
-      "@libs/database/*": [
-        "libs/database/src/*"
+      "@libs/database-library/*": [
+        "libs/database-library/src/*"
       ]
     }
   }

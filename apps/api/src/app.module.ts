@@ -5,7 +5,7 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { PostsModule } from './posts/posts.module';
 import { UsersModule } from './users/users.module';
-import { DatabaseModule } from '@libs/database';
+import { DatabaseLibraryModule } from '@libs/database-library';
 
 @Module({
   imports: [
@@ -14,7 +14,7 @@ import { DatabaseModule } from '@libs/database';
       global: true,
     },
     {
-      module: DatabaseModule,
+      module: DatabaseLibraryModule,
       global: true,
     },
     PostsModule,
