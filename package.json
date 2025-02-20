@@ -73,6 +73,10 @@
     "roots": [
       "<rootDir>/apps/",
       "<rootDir>/libs/"
-    ]
+    ],
+    "moduleNameMapper": {
+      "^auth/auth(|/.*)$": "<rootDir>/libs/auth/src/$1",
+      "^drizzle/drizzle(|/.*)$": "<rootDir>/libs/drizzle/src/$1"
+    }
   }
 }
