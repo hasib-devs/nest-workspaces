@@ -1,15 +1,29 @@
 import { Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { AuthLibraryService } from '@libs/auth-library';
 
 @Injectable()
 export class UsersService {
+  constructor(private readonly authLibrary: AuthLibraryService) {
+    console.log('UsersService created');
+  }
+
   create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
+    const userData = this.authLibrary.findUser();
+    console.log({ user: userData });
+    return {
+      ...createUserDto,
+      userData,
+    };
   }
 
   findAll() {
-    return `This action returns all users`;
+    const userData = this.authLibrary.findUser();
+    console.log({ user: userData });
+    return {
+      userData,
+    };
   }
 
   findOne(id: number) {
