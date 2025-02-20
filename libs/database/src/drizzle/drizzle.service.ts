@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { NodePgDatabase, drizzle } from 'drizzle-orm/node-postgres';
-import * as schema from 'database/drizzle/schemas';
+import * as schema from '@libs/database/drizzle/schemas';
 import { ConfigService } from '@nestjs/config';
 import { Pool } from 'pg';
 
 @Injectable()
-export class DrizzleLibraryService {
-  public readonly db: NodePgDatabase<typeof schema>;
+export class DrizzleService {
+  public readonly drizzle: NodePgDatabase<typeof schema>;
   constructor(private readonly configService: ConfigService) {
     const pool = new Pool({
       host: this.configService.get<string>('PG_DB_HOST'),
@@ -16,6 +16,6 @@ export class DrizzleLibraryService {
       database: this.configService.get<string>('PG_DB_NAME'),
     });
 
-    this.db = drizzle<typeof schema>(pool, { schema });
+    this.drizzle = drizzle<typeof schema>(pool, { schema });
   }
 }

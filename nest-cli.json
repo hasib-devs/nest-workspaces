@@ -55,13 +55,13 @@
         "tsConfigPath": "libs/config-library/tsconfig.lib.json"
       }
     },
-    "drizzle-library": {
+    "database": {
       "type": "library",
-      "root": "libs/drizzle-library",
+      "root": "libs/database",
       "entryFile": "index",
-      "sourceRoot": "libs/drizzle-library/src",
+      "sourceRoot": "libs/database/src",
       "compilerOptions": {
-        "tsConfigPath": "libs/drizzle-library/tsconfig.lib.json"
+        "tsConfigPath": "libs/database/tsconfig.lib.json"
       }
     }
   }

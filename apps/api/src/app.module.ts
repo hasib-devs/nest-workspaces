@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
+import { ConfigLibraryModule } from '@libs/config-library';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { AuthModule } from './auth/auth.module';
 import { PostsModule } from './posts/posts.module';
 import { UsersModule } from './users/users.module';
-import { AuthModule } from './auth/auth.module';
-import { ConfigLibraryModule } from 'libs/config-library';
-import { DrizzleLibraryModule } from '@libs/drizzle-library';
+import { DatabaseModule } from '@libs/database';
 
 @Module({
   imports: [
@@ -14,7 +14,7 @@ import { DrizzleLibraryModule } from '@libs/drizzle-library';
       global: true,
     },
     {
-      module: DrizzleLibraryModule,
+      module: DatabaseModule,
       global: true,
     },
     PostsModule,

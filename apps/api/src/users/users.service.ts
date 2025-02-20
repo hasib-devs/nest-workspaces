@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { DrizzleLibraryService } from '@libs/drizzle-library';
+import { DatabaseService } from '@libs/database';
 
 @Injectable()
 export class UsersService {
-  constructor(private readonly drizzleLibraryService: DrizzleLibraryService) {}
+  constructor(private readonly db: DatabaseService) {}
 
   create(createUserDto: CreateUserDto) {
     return {
@@ -14,7 +14,7 @@ export class UsersService {
   }
 
   async findAll() {
-    const data = await this.drizzleLibraryService.db.query.usersTable.findMany({
+    const data = await this.db.drizzle.query.usersTable.findMany({
       with: {
         posts: true,
       },

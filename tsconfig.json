@@ -24,23 +24,23 @@
       "@libs/auth-library/*": [
         "libs/auth-library/src/*"
       ],
-      "@libs/drizzle-library": [
-        "libs/drizzle-library/src"
-      ],
-      "@libs/drizzle-library/*": [
-        "libs/drizzle-library/src/*"
-      ],
-      "libs/common-library": [
+      "@libs/common-library": [
         "libs/common-library/src"
       ],
-      "libs/common-library/*": [
+      "@libs/common-library/*": [
         "libs/common-library/src/*"
       ],
-      "libs/config-library": [
+      "@libs/config-library": [
         "libs/config-library/src"
       ],
-      "libs/config-library/*": [
+      "@libs/config-library/*": [
         "libs/config-library/src/*"
+      ],
+      "@libs/database": [
+        "libs/database/src"
+      ],
+      "@libs/database/*": [
+        "libs/database/src/*"
       ]
     }
   }

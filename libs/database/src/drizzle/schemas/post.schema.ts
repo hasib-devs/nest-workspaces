@@ -5,7 +5,7 @@ import {
   uniqueIndex,
   varchar,
 } from 'drizzle-orm/pg-core';
-import { timestamps } from '@libs/drizzle-library/helpers';
+import { timestamps } from '@libs/database/drizzle/helpers';
 import { usersTable } from './user.schema';
 import { relations } from 'drizzle-orm';
 

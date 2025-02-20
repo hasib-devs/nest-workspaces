@@ -18,13 +18,14 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./apps/api/test/jest-e2e.json",
-    "drizzle:generate": "npx drizzle-kit generate --config=libs/drizzle-library/src/drizzle.config.ts",
-    "drizzle:migrate": "npx drizzle-kit migrate --config=libs/drizzle-library/src/drizzle.config.ts",
-    "drizzle:check": "npx drizzle-kit check --config=libs/drizzle-library/src/drizzle.config.ts",
-    "drizzle:push": "npx drizzle-kit push --config=libs/drizzle-library/src/drizzle.config.ts",
-    "drizzle:pull": "npx drizzle-kit pull --config=libs/drizzle-library/src/drizzle.config.ts",
-    "drizzle:up": "npx drizzle-kit up --config=libs/drizzle-library/src/drizzle.config.ts",
-    "drizzle:studio": "npx drizzle-kit studio --config=libs/drizzle-library/src/drizzle.config.ts"
+    "drizzle": "npx drizzle-kit --config=libs/database/src/drizzle/drizzle.config.ts",
+    "drizzle:generate": "npm run drizzle generate",
+    "drizzle:migrate": "npm run drizzle migrate",
+    "drizzle:check": "npm run drizzle check",
+    "drizzle:push": "npm run drizzle push",
+    "drizzle:pull": "npm run drizzle pull",
+    "drizzle:up": "npm run drizzle up",
+    "drizzle:studio": "npm run drizzle studio"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
@@ -90,9 +91,9 @@
     ],
     "moduleNameMapper": {
       "^@libs/auth-library(|/.*)$": "<rootDir>/libs/auth-library/src/$1",
-      "^@libs/drizzle-library(|/.*)$": "<rootDir>/libs/drizzle-library/src/$1",
       "^libs/common-library(|/.*)$": "<rootDir>/libs/common-library/src/$1",
-      "^libs/config-library(|/.*)$": "<rootDir>/libs/config-library/src/$1"
+      "^libs/config-library(|/.*)$": "<rootDir>/libs/config-library/src/$1",
+      "^libs/database(|/.*)$": "<rootDir>/libs/database/src/$1"
     }
   }
 }
