@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
-import { UsersService } from './users.service';
 import { UsersController } from './users.controller';
-import { AuthLibraryModule, AuthLibraryService } from '@libs/auth-library';
+import { UsersService } from './users.service';
+import { DrizzleLibraryModule } from '@libs/drizzle-library';
 
 @Module({
-  imports: [AuthLibraryModule],
+  imports: [DrizzleLibraryModule],
   controllers: [UsersController],
-  providers: [UsersService, AuthLibraryService],
+  providers: [UsersService],
 })
 export class UsersModule {}

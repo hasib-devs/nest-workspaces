@@ -1,28 +1,35 @@
-import { Injectable } from '@nestjs/common';
+import {
+  Database,
+  DrizzleAsyncProvider,
+} from '@libs/drizzle-library/drizzle-library.provider';
+import { Inject, Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { AuthLibraryService } from '@libs/auth-library';
 
 @Injectable()
 export class UsersService {
-  constructor(private readonly authLibrary: AuthLibraryService) {
-    console.log('UsersService created');
+  constructor(
+    @Inject(DrizzleAsyncProvider)
+    private readonly db: Database,
+  ) {
+    //
   }
 
   create(createUserDto: CreateUserDto) {
-    const userData = this.authLibrary.findUser();
-    console.log({ user: userData });
     return {
       ...createUserDto,
-      userData,
     };
   }
 
-  findAll() {
-    const userData = this.authLibrary.findUser();
-    console.log({ user: userData });
+  async findAll() {
+    // const data = await this.db.select().from(usersTable).execute();
+    const data = await this.db.query.usersTable.findMany({
+      with: {
+        posts: true,
+      },
+    });
     return {
-      userData,
+      data,
     };
   }
 
