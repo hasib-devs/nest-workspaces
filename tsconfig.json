@@ -17,19 +17,5 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
-    "paths": {
-      "auth/auth": [
-        "libs/auth/src"
-      ],
-      "auth/auth/*": [
-        "libs/auth/src/*"
-      ],
-      "drizzle/drizzle": [
-        "libs/drizzle/src"
-      ],
-      "drizzle/drizzle/*": [
-        "libs/drizzle/src/*"
-      ]
-    }
   }
 }
