@@ -19,6 +19,15 @@
         "tsConfigPath": "apps/api/tsconfig.app.json"
       }
     },
+    "auth-library": {
+      "type": "library",
+      "root": "libs/auth-library",
+      "entryFile": "index",
+      "sourceRoot": "libs/auth-library/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/auth-library/tsconfig.lib.json"
+      }
+    },
     "cli": {
       "type": "application",
       "root": "apps/cli",
@@ -28,13 +37,13 @@
         "tsConfigPath": "apps/cli/tsconfig.app.json"
       }
     },
-    "drizzle": {
+    "drizzle-library": {
       "type": "library",
-      "root": "libs/drizzle",
+      "root": "libs/drizzle-library",
       "entryFile": "index",
-      "sourceRoot": "libs/drizzle/src",
+      "sourceRoot": "libs/drizzle-library/src",
       "compilerOptions": {
-        "tsConfigPath": "libs/drizzle/tsconfig.lib.json"
+        "tsConfigPath": "libs/drizzle-library/tsconfig.lib.json"
       }
     }
   }

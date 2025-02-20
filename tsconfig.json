@@ -17,5 +17,19 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@app/auth-library": [
+        "libs/auth-library/src"
+      ],
+      "@app/auth-library/*": [
+        "libs/auth-library/src/*"
+      ],
+      "@app/drizzle-library": [
+        "libs/drizzle-library/src"
+      ],
+      "@app/drizzle-library/*": [
+        "libs/drizzle-library/src/*"
+      ]
+    }
   }
 }
