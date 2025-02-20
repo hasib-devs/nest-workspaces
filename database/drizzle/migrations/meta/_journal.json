@@ -15,6 +15,13 @@
       "when": 1740082430488,
       "tag": "0001_create_posts_table",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1740083127877,
+      "tag": "0002_user_post_relation",
+      "breakpoints": true
     }
   ]
 }

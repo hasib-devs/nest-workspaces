@@ -16,7 +16,7 @@ export default defineConfig({
   out: 'database/drizzle/migrations',
   strict: true,
   verbose: true,
-
+  breakpoints: true,
   dbCredentials: {
     url: URL,
   },

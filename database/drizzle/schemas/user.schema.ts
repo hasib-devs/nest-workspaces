@@ -1,4 +1,4 @@
-import { InferInsertModel, InferSelectModel } from 'drizzle-orm';
+import { InferInsertModel, InferSelectModel, relations } from 'drizzle-orm';
 import {
   pgTable,
   serial,
@@ -7,6 +7,7 @@ import {
   varchar,
 } from 'drizzle-orm/pg-core';
 import { timestamps } from '@libs/drizzle-library/helpers';
+import { postsTable } from './post.schema';
 
 // Define a users table
 export const usersTable = pgTable(
@@ -26,6 +27,10 @@ export const usersTable = pgTable(
     uniqueIndex('name_idx').on(table.name),
   ],
 );
+
+export const usersRelations = relations(usersTable, ({ many }) => ({
+  posts: many(postsTable),
+}));
 
 export type User = InferSelectModel<typeof usersTable>;
 export type UserCreate = InferInsertModel<typeof usersTable>;
