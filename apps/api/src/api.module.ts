@@ -5,11 +5,11 @@ import { AuthModule } from '@api/modules/auth/auth.module';
 import { PostsModule } from '@api/modules/posts/posts.module';
 import { UsersModule } from '@api/modules/users/users.module';
 import { ConfigModule } from '@nestjs/config';
-import { EnvSchema, validateEnv } from '@libs/common';
+import { EnvValidationSchema, validateEnv } from '@libs/common';
 
 @Module({
   imports: [
-    ConfigModule.forRoot<EnvSchema>({
+    ConfigModule.forRoot<EnvValidationSchema>({
       isGlobal: true,
       validate: validateEnv,
     }),

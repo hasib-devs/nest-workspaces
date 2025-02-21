@@ -1,4 +1,4 @@
-import { EnvSchema } from '@libs/common';
+import { EnvValidationSchema } from '@libs/common';
 import { MongoDriver } from '@mikro-orm/mongodb';
 import { MikroOrmModule as MikroOrmModulePermeative } from '@mikro-orm/nestjs';
 import { Module } from '@nestjs/common';
@@ -10,7 +10,7 @@ import { MikroOrmService } from './mikro-orm.service';
     MikroOrmModulePermeative.forRootAsync({
       driver: MongoDriver,
       inject: [ConfigService],
-      useFactory: (configService: ConfigService<EnvSchema>) => {
+      useFactory: (configService: ConfigService<EnvValidationSchema>) => {
         const host = configService.get<string>('NOSQL_DB_HOST');
         const port = configService.get<number>('NOSQL_DB_PORT');
         const user = configService.get<string>('NOSQL_DB_USER');

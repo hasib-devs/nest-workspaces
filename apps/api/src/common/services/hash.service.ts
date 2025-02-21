@@ -1,4 +1,4 @@
-import { EnvSchema } from '@libs/common';
+import { EnvValidationSchema } from '@libs/common';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import * as argon2 from 'argon2';
@@ -7,7 +7,7 @@ import * as argon2 from 'argon2';
 export class HashService {
   protected hashSecret: Buffer;
   protected hashSalt: Buffer;
-  constructor(protected configService: ConfigService<EnvSchema>) {
+  constructor(protected configService: ConfigService<EnvValidationSchema>) {
     this.hashSecret = Buffer.from(
       this.configService.get<string>('HASH_SECRET') || 'super-hash-secret',
     );
