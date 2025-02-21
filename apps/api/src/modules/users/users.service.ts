@@ -26,7 +26,7 @@ export class UsersService {
   }
 
   async findOne(identifier: string) {
-    const data = await this.orm.mikro.em.find(MediaEntity, {});
+    const data = await this.orm.mikro.em.findAll(MediaEntity);
     return {
       data,
       identifier,

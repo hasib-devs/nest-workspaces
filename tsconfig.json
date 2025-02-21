@@ -37,5 +37,5 @@
         "libs/orm-library/src/*"
       ]
     }
-  }
+  },
 }
