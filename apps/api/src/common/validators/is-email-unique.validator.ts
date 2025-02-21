@@ -1,5 +1,3 @@
-import { CreateUserDto } from '@/modules/core/user/dto/create-user.dto';
-import { UsersService } from '@/modules/core/user/user.service';
 import { Injectable } from '@nestjs/common';
 import {
   ValidationOptions,
@@ -7,19 +5,21 @@ import {
   ValidatorConstraintInterface,
   registerDecorator,
 } from 'class-validator';
+import { UsersService } from '../../modules/users/users.service';
+import { CreateUserDto } from '../../modules/users/dto/create-user.dto';
 
 @ValidatorConstraint({ async: true })
 @Injectable()
 export class IsEmailUniqueConstraint implements ValidatorConstraintInterface {
   constructor(private readonly usersService: UsersService) {}
 
-  async validate(email: string) {
+  validate(email: string) {
     if (!this.usersService) {
       console.error('UsersService is not injected');
       return false;
     }
 
-    const user = await this.usersService.findByEmail(email);
+    const user = this.usersService.findOne(email);
     return !user;
   }
 

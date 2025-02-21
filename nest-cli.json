@@ -19,15 +19,6 @@
         "tsConfigPath": "apps/api/tsconfig.app.json"
       }
     },
-    "auth-library": {
-      "type": "library",
-      "root": "libs/auth-library",
-      "entryFile": "index",
-      "sourceRoot": "libs/auth-library/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/auth-library/tsconfig.lib.json"
-      }
-    },
     "cli": {
       "type": "application",
       "root": "apps/cli",
@@ -35,15 +26,6 @@
       "sourceRoot": "apps/cli/src",
       "compilerOptions": {
         "tsConfigPath": "apps/cli/tsconfig.app.json"
-      }
-    },
-    "common-library": {
-      "type": "library",
-      "root": "libs/common-library",
-      "entryFile": "index",
-      "sourceRoot": "libs/common-library/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/common-library/tsconfig.lib.json"
       }
     },
     "config-library": {

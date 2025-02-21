@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigLibraryModule } from '@libs/config-library';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { AuthModule } from './auth/auth.module';
-import { PostsModule } from './posts/posts.module';
-import { UsersModule } from './users/users.module';
+import { ApiController } from './api.controller';
+import { ApiService } from './api.service';
+import { AuthModule } from './modules/auth/auth.module';
+import { PostsModule } from './modules/posts/posts.module';
+import { UsersModule } from './modules/users/users.module';
 import { DatabaseLibraryModule } from '@libs/database-library';
 
 @Module({
@@ -21,7 +21,7 @@ import { DatabaseLibraryModule } from '@libs/database-library';
     UsersModule,
     AuthModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [ApiController],
+  providers: [ApiService],
 })
-export class AppModule {}
+export class ApiModule {}

@@ -18,18 +18,6 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@libs/auth-library": [
-        "libs/auth-library/src"
-      ],
-      "@libs/auth-library/*": [
-        "libs/auth-library/src/*"
-      ],
-      "@libs/common-library": [
-        "libs/common-library/src"
-      ],
-      "@libs/common-library/*": [
-        "libs/common-library/src/*"
-      ],
       "@libs/config-library": [
         "libs/config-library/src"
       ],
