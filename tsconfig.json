@@ -18,12 +18,6 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@libs/config-library": [
-        "libs/config-library/src"
-      ],
-      "@libs/config-library/*": [
-        "libs/config-library/src/*"
-      ],
       "@libs/database-library": [
         "libs/database-library/src"
       ],
