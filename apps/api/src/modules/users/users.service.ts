@@ -2,9 +2,14 @@ import { DrizzleOrm, DrizzleOrmProvider, usersTable } from '@libs/drizzle-orm';
 import { Inject, Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { SupabaseProvider } from '@libs/supabase';
+import { SupabaseClient } from '@supabase/supabase-js';
 @Injectable()
 export class UsersService {
-  constructor(@Inject(DrizzleOrmProvider) private readonly db: DrizzleOrm) {}
+  constructor(
+    @Inject(DrizzleOrmProvider) private readonly drizzle: DrizzleOrm,
+    @Inject(SupabaseProvider) private readonly supabase: SupabaseClient,
+  ) {}
 
   create(createUserDto: CreateUserDto) {
     return {
@@ -13,11 +18,11 @@ export class UsersService {
   }
 
   async findAll() {
-    return this.db.select().from(usersTable);
+    return this.drizzle.select().from(usersTable);
   }
 
   findOne(identifier: string) {
-    // const data = await this.orm.mikro.em.findAll(MediaEntity);
+    console.log({ supabase: this.supabase });
     return {
       id: 1,
       name: 'John Doe',
