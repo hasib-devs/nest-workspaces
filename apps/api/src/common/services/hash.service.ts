@@ -1,17 +1,18 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import * as argon2 from 'argon2';
+import { EnvValidator } from '@api/common/validators/env.validator';
 
 @Injectable()
 export class HashService {
   protected hashSecret: Buffer;
   protected hashSalt: Buffer;
-  constructor(protected configService: ConfigService) {
+  constructor(protected configService: ConfigService<EnvValidator>) {
     this.hashSecret = Buffer.from(
-      this.configService.get<string>('HASH_SECRET') || 'super-secret',
+      this.configService.get<string>('HASH_SECRET') || 'super-hash-secret',
     );
     this.hashSalt = Buffer.from(
-      this.configService.get<string>('HASH_SECRET') || 'super-secret',
+      this.configService.get<string>('HASH_SALT') || 'super-hash-salt',
     );
   }
 

@@ -18,6 +18,9 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
+      "@api/*": [
+        "apps/api/src/*"
+      ],
       "@libs/database-library": [
         "libs/database-library/src"
       ],

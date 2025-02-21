@@ -1,9 +1,9 @@
 import { NestFactory } from '@nestjs/core';
-import { ApiModule } from './api.module';
+import { ApiModule } from '@api/api.module';
 import { useContainer } from 'class-validator';
 import helmet from 'helmet';
 import { ValidationPipe } from '@nestjs/common';
-import { validationExceptionFactory } from 'apps/api/src/common/pipes/validation-exception';
+import { validationExceptionFactory } from '@api/common/pipes/validation-exception';
 
 async function bootstrap() {
   const app = await NestFactory.create(ApiModule);
