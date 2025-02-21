@@ -9,6 +9,7 @@ const password = process.env.PG_DB_PASSWORD;
 const databaseName = process.env.PG_DB_NAME || 'nest-quickstart';
 
 const url = `postgresql://${user}:${password}@${host}:${port}/${databaseName}`;
+const connectionUrl = `postgresql://postgres.afxphdapyxedkhiwifnx:NestApp@aws-0-us-west-1.pooler.supabase.com:6543/postgres`;
 
 export default defineConfig({
   dialect: 'postgresql',
@@ -17,5 +18,5 @@ export default defineConfig({
   strict: true,
   verbose: true,
   breakpoints: true,
-  dbCredentials: { url },
+  dbCredentials: { url: connectionUrl },
 });
