@@ -1,12 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { ORMLibraryService } from '@libs/orm-library';
-import { MediaEntity } from '@libs/orm-library/mikro/entities/media.entity';
 
 @Injectable()
 export class UsersService {
-  constructor(private readonly orm: ORMLibraryService) {}
+  constructor() {}
 
   create(createUserDto: CreateUserDto) {
     return {
@@ -14,21 +12,19 @@ export class UsersService {
     };
   }
 
-  async findAll() {
-    const data = await this.orm.drizzle.query.usersTable.findMany({
-      with: {
-        posts: true,
-      },
-    });
+  findAll() {
     return {
-      data,
+      data: [],
     };
   }
 
-  async findOne(identifier: string) {
-    const data = await this.orm.mikro.em.findAll(MediaEntity);
+  findOne(identifier: string) {
+    // const data = await this.orm.mikro.em.findAll(MediaEntity);
     return {
-      data,
+      id: 1,
+      name: 'John Doe',
+      email: 'email@example.com',
+      role: 'admin',
       identifier,
     };
   }

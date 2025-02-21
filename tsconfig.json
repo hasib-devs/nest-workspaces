@@ -39,12 +39,12 @@
       "@libs/drizzle-orm/*": [
         "libs/drizzle-orm/src/*"
       ],
-      "@libs/orm-library": [
-        "libs/orm-library/src"
+      "@libs/mikro-orm": [
+        "libs/mikro-orm/src"
       ],
-      "@libs/orm-library/*": [
-        "libs/orm-library/src/*"
-      ]
+      "@libs/mikro-orm/*": [
+        "libs/mikro-orm/src/*"
+      ],
     }
   },
   "exclude": [

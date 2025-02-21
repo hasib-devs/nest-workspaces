@@ -20,9 +20,6 @@ export default defineConfig({
   driver: MongoDriver,
   clientUrl,
   debug: true,
-  // baseDir: process.cwd(),
-  // entitiesTs: ['libs/orm-library/src/mikro/entities/**/*.entity.ts'],
-  // entities: ['dist/libs/orm-library/src/mikro/entities/**/*.entity.js'],
   entities: [...Object.values(entities)],
   metadataProvider: TsMorphMetadataProvider,
 });

@@ -49,13 +49,13 @@
         "tsConfigPath": "libs/drizzle-orm/tsconfig.lib.json"
       }
     },
-    "orm-library": {
+    "mikro-orm": {
       "type": "library",
-      "root": "libs/orm-library",
+      "root": "libs/mikro-orm",
       "entryFile": "index",
-      "sourceRoot": "libs/orm-library/src",
+      "sourceRoot": "libs/mikro-orm/src",
       "compilerOptions": {
-        "tsConfigPath": "libs/orm-library/tsconfig.lib.json"
+        "tsConfigPath": "libs/mikro-orm/tsconfig.lib.json"
       }
     }
   }

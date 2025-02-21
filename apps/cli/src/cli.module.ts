@@ -1,11 +1,10 @@
-import { Module } from '@nestjs/common';
-import { CliService } from './cli.service';
-import { ORMLibraryModule } from '@libs/orm-library';
-import { ConfigModule } from '@nestjs/config';
 import {
   EnvSchema,
   validateEnv,
 } from '@libs/common-library/validators/env.validator';
+import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+import { CliService } from './cli.service';
 
 @Module({
   imports: [
@@ -13,10 +12,6 @@ import {
       isGlobal: true,
       validate: validateEnv,
     }),
-    {
-      module: ORMLibraryModule,
-      global: true,
-    },
   ],
   providers: [CliService],
 })
