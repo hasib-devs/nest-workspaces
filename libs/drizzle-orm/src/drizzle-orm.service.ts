@@ -3,7 +3,7 @@ import { NodePgDatabase, drizzle } from 'drizzle-orm/node-postgres';
 import * as schema from './schemas';
 import { ConfigService } from '@nestjs/config';
 import { Pool } from 'pg';
-import { EnvSchema } from '@libs/common-library/validators/env.validator';
+import { EnvSchema } from '@libs/common';
 
 @Injectable()
 export class DrizzleOrmService {

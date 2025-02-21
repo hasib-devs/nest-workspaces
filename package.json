@@ -13,7 +13,7 @@
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/apps/api/main",
-    "start:libs": "concurrently \"pnpm start:dev common-library\" ",
+    "start:libs": "concurrently \"pnpm start:dev common\" \"pnpm start:dev drizzle-orm\" \"pnpm start:dev mikro-orm\"",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -108,7 +108,7 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
-      "^@libs/common-library(|/.*)$": "<rootDir>/libs/common-library/src/$1",
+      "^@libs/common(|/.*)$": "<rootDir>/libs/common/src/$1",
       "^@libs/drizzle-orm(|/.*)$": "<rootDir>/libs/drizzle-orm/src/$1",
       "^@libs/mikro-orm(|/.*)$": "<rootDir>/libs/mikro-orm/src/$1"
     }

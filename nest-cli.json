@@ -31,13 +31,13 @@
         "tsConfigPath": "apps/cli/tsconfig.app.json"
       }
     },
-    "common-library": {
+    "common": {
       "type": "library",
-      "root": "libs/common-library",
+      "root": "libs/common",
       "entryFile": "index",
-      "sourceRoot": "libs/common-library/src",
+      "sourceRoot": "libs/common/src",
       "compilerOptions": {
-        "tsConfigPath": "libs/common-library/tsconfig.lib.json"
+        "tsConfigPath": "libs/common/tsconfig.lib.json"
       }
     },
     "drizzle-orm": {

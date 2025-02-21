@@ -1,4 +1,4 @@
-import { EnvSchema } from '@libs/common-library/validators/env.validator';
+import { EnvSchema } from '@libs/common';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import * as argon2 from 'argon2';

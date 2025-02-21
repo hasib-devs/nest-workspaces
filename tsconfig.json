@@ -27,11 +27,11 @@
       "@cli/*": [
         "apps/cli/src/*"
       ],
-      "@libs/common-library": [
-        "libs/common-library/src"
+      "@libs/common": [
+        "libs/common/src"
       ],
-      "@libs/common-library/*": [
-        "libs/common-library/src/*"
+      "@libs/common/*": [
+        "libs/common/src/*"
       ],
       "@libs/drizzle-orm": [
         "libs/drizzle-orm/src"

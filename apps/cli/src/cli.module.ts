@@ -1,7 +1,4 @@
-import {
-  EnvSchema,
-  validateEnv,
-} from '@libs/common-library/validators/env.validator';
+import { EnvSchema, validateEnv } from '@libs/common';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { CliService } from './cli.service';

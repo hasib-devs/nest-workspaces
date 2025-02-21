@@ -1,4 +1,4 @@
-import { EnvSchema } from '@libs/common-library/validators/env.validator';
+import { EnvSchema } from '@libs/common';
 import { MongoDriver } from '@mikro-orm/mongodb';
 import { MikroOrmModule as MikroOrmModulePermeative } from '@mikro-orm/nestjs';
 import { Module } from '@nestjs/common';

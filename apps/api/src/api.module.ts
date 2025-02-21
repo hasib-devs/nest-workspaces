@@ -5,10 +5,7 @@ import { AuthModule } from '@api/modules/auth/auth.module';
 import { PostsModule } from '@api/modules/posts/posts.module';
 import { UsersModule } from '@api/modules/users/users.module';
 import { ConfigModule } from '@nestjs/config';
-import {
-  EnvSchema,
-  validateEnv,
-} from '@libs/common-library/validators/env.validator';
+import { EnvSchema, validateEnv } from '@libs/common';
 
 @Module({
   imports: [
