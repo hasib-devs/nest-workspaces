@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { CliService } from './cli.service';
-import { DatabaseLibraryModule } from '@libs/database-library';
+import { ORMLibraryModule } from '@libs/orm-library';
 import { ConfigModule } from '@nestjs/config';
 import {
   EnvSchema,
@@ -14,7 +14,7 @@ import {
       validate: validateEnv,
     }),
     {
-      module: DatabaseLibraryModule,
+      module: ORMLibraryModule,
       global: true,
     },
   ],

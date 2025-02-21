@@ -6,7 +6,7 @@ import {
   uniqueIndex,
   varchar,
 } from 'drizzle-orm/pg-core';
-import { timestamps } from '@libs/database-library/drizzle/helpers';
+import { timestamps } from '@libs/orm-library/drizzle/helpers';
 import { postsTable } from './post.schema';
 
 // Define a users table

@@ -1,11 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { DatabaseLibraryService } from '@libs/database-library';
+import { ORMLibraryService } from '@libs/orm-library';
+import { MediaEntity } from '@libs/orm-library/mikro/entities/media.entity';
 
 @Injectable()
 export class UsersService {
-  constructor(private readonly db: DatabaseLibraryService) {}
+  constructor(private readonly orm: ORMLibraryService) {}
 
   create(createUserDto: CreateUserDto) {
     return {
@@ -14,7 +15,7 @@ export class UsersService {
   }
 
   async findAll() {
-    const data = await this.db.drizzle.query.usersTable.findMany({
+    const data = await this.orm.drizzle.query.usersTable.findMany({
       with: {
         posts: true,
       },
@@ -24,8 +25,12 @@ export class UsersService {
     };
   }
 
-  findOne(identifier: string) {
-    return `This action returns a #${identifier} user`;
+  async findOne(identifier: string) {
+    const data = await this.orm.mikro.em.find(MediaEntity, {});
+    return {
+      data,
+      identifier,
+    };
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {

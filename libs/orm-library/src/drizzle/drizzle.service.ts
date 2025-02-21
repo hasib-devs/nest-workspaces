@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { NodePgDatabase, drizzle } from 'drizzle-orm/node-postgres';
-import * as schema from '@libs/database-library/drizzle/schemas';
+import * as schema from '@libs/orm-library/drizzle/schemas';
 import { ConfigService } from '@nestjs/config';
 import { Pool } from 'pg';
 import { EnvSchema } from '@libs/common-library/validators/env.validator';

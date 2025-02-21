@@ -4,7 +4,7 @@ import { ApiService } from '@api/api.service';
 import { AuthModule } from '@api/modules/auth/auth.module';
 import { PostsModule } from '@api/modules/posts/posts.module';
 import { UsersModule } from '@api/modules/users/users.module';
-import { DatabaseLibraryModule } from '@libs/database-library';
+import { ORMLibraryModule } from '@libs/orm-library';
 import { ConfigModule } from '@nestjs/config';
 import {
   EnvSchema,
@@ -18,7 +18,7 @@ import {
       validate: validateEnv,
     }),
     {
-      module: DatabaseLibraryModule,
+      module: ORMLibraryModule,
       global: true,
     },
     PostsModule,

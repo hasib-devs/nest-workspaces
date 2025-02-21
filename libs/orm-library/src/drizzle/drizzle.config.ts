@@ -12,7 +12,7 @@ const URL = `postgresql://${PG_DB_USER}:${PG_DB_PASSWORD}@${PG_DB_HOST}:${PG_DB_
 
 export default defineConfig({
   dialect: 'postgresql',
-  schema: 'libs/database-library/src/drizzle/schemas/index.ts',
+  schema: 'libs/orm-library/src/drizzle/schemas/index.ts',
   out: 'libs/database/src/drizzle/migrations',
   strict: true,
   verbose: true,

@@ -7,29 +7,33 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
-    "build:all": "nest build --all",
+    "build:all": "rm -rf dist && nest build --all",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/apps/api/main",
-    "start:libs": "concurrently \"pnpm start:dev common-library\" \"pnpm start:dev database-library\"",
+    "start:libs": "concurrently \"pnpm start:dev common-library\" \"pnpm start:dev orm-library\"",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./apps/api/test/jest-e2e.json",
-    "drizzle": "npx drizzle-kit --config=libs/database-library/src/drizzle/drizzle.config.ts",
+    "drizzle": "npx drizzle-kit --config=libs/orm-library/src/drizzle/drizzle.config.ts",
     "drizzle:generate": "pnpm drizzle generate",
     "drizzle:migrate": "pnpm drizzle migrate",
     "drizzle:check": "pnpm drizzle check",
     "drizzle:push": "pnpm drizzle push",
     "drizzle:pull": "pnpm drizzle pull",
     "drizzle:up": "pnpm drizzle up",
-    "drizzle:studio": "pnpm drizzle studio"
+    "drizzle:studio": "pnpm drizzle studio",
+    "mikro": "npx mikro-orm"
   },
   "dependencies": {
+    "@mikro-orm/core": "^6.4.6",
+    "@mikro-orm/mongodb": "^6.4.6",
+    "@mikro-orm/nestjs": "^6.1.1",
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.0",
     "@nestjs/core": "^11.0.1",
@@ -48,6 +52,8 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.18.0",
+    "@mikro-orm/cli": "^6.4.6",
+    "@mikro-orm/reflection": "^6.4.6",
     "@nestjs/cli": "^11.0.0",
     "@nestjs/schematics": "^11.0.0",
     "@nestjs/testing": "^11.0.1",
@@ -76,6 +82,12 @@
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.20.0"
   },
+  "mikro-orm": {
+    "configPaths": [
+      "dist/libs/orm-library/src/mikro/mikro-orm.config.js",
+      "libs/orm-library/src/mikro/mikro-orm.config.ts"
+    ]
+  },
   "jest": {
     "moduleFileExtensions": [
       "js",
@@ -98,7 +110,7 @@
     ],
     "moduleNameMapper": {
       "^@libs/common-library(|/.*)$": "<rootDir>/libs/common-library/src/$1",
-      "^libs/database-library(|/.*)$": "<rootDir>/libs/database-library/src/$1"
+      "^libs/orm-library(|/.*)$": "<rootDir>/libs/orm-library/src/$1"
     }
   }
 }

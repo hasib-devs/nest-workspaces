@@ -37,13 +37,13 @@
         "tsConfigPath": "libs/common-library/tsconfig.lib.json"
       }
     },
-    "database-library": {
+    "orm-library": {
       "type": "library",
-      "root": "libs/database-library",
+      "root": "libs/orm-library",
       "entryFile": "index",
-      "sourceRoot": "libs/database-library/src",
+      "sourceRoot": "libs/orm-library/src",
       "compilerOptions": {
-        "tsConfigPath": "libs/database-library/tsconfig.lib.json"
+        "tsConfigPath": "libs/orm-library/tsconfig.lib.json"
       }
     }
   }

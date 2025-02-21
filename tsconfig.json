@@ -30,11 +30,11 @@
       "@libs/common-library/*": [
         "libs/common-library/src/*"
       ],
-      "@libs/database-library": [
-        "libs/database-library/src"
+      "@libs/orm-library": [
+        "libs/orm-library/src"
       ],
-      "@libs/database-library/*": [
-        "libs/database-library/src/*"
+      "@libs/orm-library/*": [
+        "libs/orm-library/src/*"
       ]
     }
   }
