@@ -21,6 +21,9 @@
       "@api/*": [
         "apps/api/src/*"
       ],
+      "@cli/*": [
+        "apps/cli/src/*"
+      ],
       "@libs/common-library": [
         "libs/common-library/src"
       ],
