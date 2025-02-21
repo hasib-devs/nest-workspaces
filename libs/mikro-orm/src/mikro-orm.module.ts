@@ -4,7 +4,6 @@ import { MikroOrmModule as MikroOrmModulePermeative } from '@mikro-orm/nestjs';
 import { Module } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import * as entities from './entities';
-import { MikroOrmService } from './mikro-orm.service';
 @Module({
   imports: [
     MikroOrmModulePermeative.forRootAsync({
@@ -29,7 +28,7 @@ import { MikroOrmService } from './mikro-orm.service';
       },
     }),
   ],
-  providers: [MikroOrmService],
-  exports: [MikroOrmService],
+  providers: [],
+  exports: [],
 })
 export class MikroOrmModule {}
