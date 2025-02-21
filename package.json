@@ -109,7 +109,8 @@
     "moduleNameMapper": {
       "^@libs/common(|/.*)$": "<rootDir>/libs/common/src/$1",
       "^@libs/drizzle-orm(|/.*)$": "<rootDir>/libs/drizzle-orm/src/$1",
-      "^@libs/mikro-orm(|/.*)$": "<rootDir>/libs/mikro-orm/src/$1"
+      "^@libs/mikro-orm(|/.*)$": "<rootDir>/libs/mikro-orm/src/$1",
+      "^@libs/supabase(|/.*)$": "<rootDir>/libs/supabase/src/$1"
     }
   }
 }

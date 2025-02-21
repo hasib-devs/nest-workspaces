@@ -45,6 +45,12 @@
       "@libs/mikro-orm/*": [
         "libs/mikro-orm/src/*"
       ],
+      "@libs/supabase": [
+        "libs/supabase/src"
+      ],
+      "@libs/supabase/*": [
+        "libs/supabase/src/*"
+      ]
     }
   },
   "exclude": [

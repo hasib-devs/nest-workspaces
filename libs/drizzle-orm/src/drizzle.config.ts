@@ -19,4 +19,5 @@ export default defineConfig({
   verbose: true,
   breakpoints: true,
   dbCredentials: { url },
+  schemaFilter: ['public'],
 });
