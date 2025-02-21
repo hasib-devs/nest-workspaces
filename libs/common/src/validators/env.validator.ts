@@ -53,11 +53,11 @@ export class EnvValidationSchema {
 
   @IsNotEmpty()
   @IsString()
-  SUPABASE_PROJECT_URL!: string;
+  SUPABASE_URL!: string;
 
   @IsNotEmpty()
   @IsString()
-  SUPABASE_API_KEY!: string;
+  SUPABASE_KEY!: string;
 }
 
 export function validateEnv(config: Record<string, unknown>) {
