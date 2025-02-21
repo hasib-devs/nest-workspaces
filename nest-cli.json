@@ -7,6 +7,9 @@
     "webpack": true,
     "tsConfigPath": "apps/api/tsconfig.app.json"
   },
+  "generateOptions": {
+    "spec": false
+  },
   "monorepo": true,
   "root": "apps/api",
   "projects": {
@@ -35,6 +38,15 @@
       "sourceRoot": "libs/common-library/src",
       "compilerOptions": {
         "tsConfigPath": "libs/common-library/tsconfig.lib.json"
+      }
+    },
+    "drizzle-orm": {
+      "type": "library",
+      "root": "libs/drizzle-orm",
+      "entryFile": "index",
+      "sourceRoot": "libs/drizzle-orm/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/drizzle-orm/tsconfig.lib.json"
       }
     },
     "orm-library": {

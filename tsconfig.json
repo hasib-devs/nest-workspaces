@@ -33,6 +33,12 @@
       "@libs/common-library/*": [
         "libs/common-library/src/*"
       ],
+      "@libs/drizzle-orm": [
+        "libs/drizzle-orm/src"
+      ],
+      "@libs/drizzle-orm/*": [
+        "libs/drizzle-orm/src/*"
+      ],
       "@libs/orm-library": [
         "libs/orm-library/src"
       ],

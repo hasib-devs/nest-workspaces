@@ -110,6 +110,7 @@
     ],
     "moduleNameMapper": {
       "^@libs/common-library(|/.*)$": "<rootDir>/libs/common-library/src/$1",
+      "^@libs/drizzle-orm(|/.*)$": "<rootDir>/libs/drizzle-orm/src/$1",
       "^libs/orm-library(|/.*)$": "<rootDir>/libs/orm-library/src/$1"
     }
   }
