@@ -21,6 +21,12 @@
       "@api/*": [
         "apps/api/src/*"
       ],
+      "@libs/common-library": [
+        "libs/common-library/src"
+      ],
+      "@libs/common-library/*": [
+        "libs/common-library/src/*"
+      ],
       "@libs/database-library": [
         "libs/database-library/src"
       ],

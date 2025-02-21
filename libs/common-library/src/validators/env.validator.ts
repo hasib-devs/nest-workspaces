@@ -1,7 +1,7 @@
 import { plainToInstance } from 'class-transformer';
 import { IsNotEmpty, IsString, validateSync } from 'class-validator';
 
-export class EnvValidator {
+export class EnvSchema {
   APP_PORT?: number;
   APP_NAME?: string;
 
@@ -53,7 +53,7 @@ export class EnvValidator {
 }
 
 export function validateEnv(config: Record<string, unknown>) {
-  const validatedConfig = plainToInstance(EnvValidator, config, {
+  const validatedConfig = plainToInstance(EnvSchema, config, {
     enableImplicitConversion: true,
   });
 
