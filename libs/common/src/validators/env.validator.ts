@@ -50,6 +50,14 @@ export class EnvSchema {
   @IsNotEmpty()
   @IsString()
   HASH_SECRET!: string;
+
+  @IsNotEmpty()
+  @IsString()
+  SUPABASE_PROJECT_URL!: string;
+
+  @IsNotEmpty()
+  @IsString()
+  SUPABASE_API_KEY!: string;
 }
 
 export function validateEnv(config: Record<string, unknown>) {
