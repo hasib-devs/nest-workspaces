@@ -24,7 +24,7 @@ export class EnvSchema {
 
   @IsNotEmpty()
   @IsString()
-  NOSQL_DB_HOST = 'localhost';
+  NOSQL_DB_HOST: string = 'localhost';
 
   @IsNotEmpty()
   NOSQL_DB_PORT = 27017;

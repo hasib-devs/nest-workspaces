@@ -3,7 +3,7 @@ dotenv.config();
 
 import { defineConfig, MongoDriver } from '@mikro-orm/mongodb';
 import { TsMorphMetadataProvider } from '@mikro-orm/reflection';
-import { MediaEntity } from './entities/media.entity';
+import * as entities from './entities';
 
 export const NOSQL_DB_HOST = process.env.NOSQL_DB_HOST || 'localhost';
 export const NOSQL_DB_PORT = Number(process.env.NOSQL_DB_PORT || 27017);
@@ -23,6 +23,6 @@ export default defineConfig({
   // baseDir: process.cwd(),
   // entitiesTs: ['libs/orm-library/src/mikro/entities/**/*.entity.ts'],
   // entities: ['dist/libs/orm-library/src/mikro/entities/**/*.entity.js'],
-  entities: [MediaEntity],
+  entities: [...Object.values(entities)],
   metadataProvider: TsMorphMetadataProvider,
 });
